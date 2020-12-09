@@ -1,0 +1,8 @@
+https://thinkster.io/tutorials/rails-json-api/setting-up-users-and-authentication-for-our-api
+$ rails generate devise:install
+$ rails generate devise User
+$ rails g migration AddProfileFieldsToUsers username:string:uniq image:string bio:text
+$ rake db:migrate
+
+In config/routes.rb, wrap the devise routes in a scope :api block, and pass in the options defaults: { format: :json } to the scope method
+
