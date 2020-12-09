@@ -39,12 +39,4 @@ class ApplicationController < ActionController::API
     @current_user_id.present?
   end
 
-  def transform_keys(hash)
-    result = {}
-    hash.each_pair do |key, value|
-      result[yield(key)] = value
-    end
-    result
-  end
-
 end
